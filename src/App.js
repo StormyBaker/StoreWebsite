@@ -1,9 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import AppNavbar from './Components/navbar.js';
+
+
 
 function App() {
   return (
     <div className="App">
+      <AppNavbar name="Jarvis Foods" />
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
