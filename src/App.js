@@ -1,6 +1,7 @@
 import './App.css';
 import AppNavbar from './Components/AppNavbar.js';
 import HeaderCarousel from './Components/HeaderCarousel.js';
+import CardRow from './Components/CardRow.js';
 
 
 
@@ -10,6 +11,7 @@ function App() {
       <div className="Page">
         <AppNavbar name="Jarvis Foods" />
         <HeaderCarousel />
+        <CardRow />
       </div>
 
       <footer>
