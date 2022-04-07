@@ -2,29 +2,40 @@ import { useState } from 'react';
 import {Card, CardGroup} from 'react-bootstrap';
 import Products from "./Products.js";
 
-export default async function CardRow(props) {
-  var [data, setData] = useState(<></>)
-  
-  setData(await GetProduct())
+export default function CardRow(props) {
+  const [data, setData] = useState();
 
-  return (
-    <CardGroup>
-      {data}
-    </CardGroup>
-  )
+  async function load() {
+    let tempData = await Products();
+    setData(tempData);
+    console.log(tempData)
+  }
+
+  if (!data) {
+    load();
+
+    return (
+      <div>Loading data...</div>
+    )
+  } else {
+    return (
+      <CardGroup>
+        {processData(data)}
+      </CardGroup>
+    )
+  }
 }
 
-async function GetProduct(){
+function processData(data) {
   var a = []
-  for (let p of JSON.parse(await Products())){
+  for (let p of data){
     a.push(
       <Card>
         <Card.Img variant="top" src="holder.js/100px160" />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
+          <Card.Title>{p.Name}</Card.Title>
           <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This content is a little bit longer.
+            {p.Description}
           </Card.Text>
         </Card.Body>
         <Card.Footer>
