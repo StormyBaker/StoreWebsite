@@ -1,8 +1,23 @@
+import { useState } from 'react';
 import {Card, CardGroup} from 'react-bootstrap';
+import Products from "./Products.js";
 
-export default function CardRow(props) {
+export default async function CardRow(props) {
+  var [data, setData] = useState(<></>)
+  
+  setData(await GetProduct())
+
   return (
     <CardGroup>
+      {data}
+    </CardGroup>
+  )
+}
+
+async function GetProduct(){
+  var a = []
+  for (let p of JSON.parse(await Products())){
+    a.push(
       <Card>
         <Card.Img variant="top" src="holder.js/100px160" />
         <Card.Body>
@@ -16,33 +31,8 @@ export default function CardRow(props) {
           <small className="text-muted">Last updated 3 mins ago</small>
         </Card.Footer>
       </Card>
-      <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This card has supporting text below as a natural lead-in to additional
-            content.{' '}
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
-      <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in to
-            additional content. This card has even longer content than the first to
-            show that equal height action.
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
-    </CardGroup>
-  )
+    )
+  }
+  
+  return a
 }
