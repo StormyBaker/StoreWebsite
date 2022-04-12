@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {Card, CardGroup, Col, Container, Row} from 'react-bootstrap';
 import Products from "./Products.js";
+import ProductImage from './ProductsImage.js';
 
 export default function CardRow(props) {
   const [data, setData] = useState();
@@ -28,18 +29,18 @@ export default function CardRow(props) {
   }
 }
 
-function processData(data) {
+async function processData(data) {
   var a = []
   for (let p of data){
     a.push(
       <Col xl={3}>
         <CardGroup>
           <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
+            <Card.Img variant="top" src={await ProductImage(p.UPC)} />
             <Card.Body>
               <Card.Title>{p.Name}</Card.Title>
               <Card.Text>
-                {p.Description}
+                {(p.Description.length > 200) ? p.Description.substring(0, 197) + "..." : p.Description}
               </Card.Text>
             </Card.Body>
           </Card>
