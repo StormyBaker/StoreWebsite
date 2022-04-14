@@ -7,7 +7,7 @@ export default function CardRow(props) {
 
   async function load() {
     let tempData = await Products();
-    setData(tempData);
+    setData(tempData[0]);
     console.log(tempData)
   }
 
