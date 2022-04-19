@@ -29,3 +29,7 @@ footer {
   bottom: 0;
   margin-bottom: -150px;
 }
+
+.carousel, .carousel-item {
+  max-height: calc(100vh - 56px);
+}

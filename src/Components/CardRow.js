@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import {Card, CardGroup, Col, Container, Row} from 'react-bootstrap';
-import Products from "./Products.js";
+import {GetAllProductsWithImages} from "../DataAPI/Products.js";
+import { LinkContainer } from 'react-router-bootstrap';
 
 export default function CardRow(props) {
   const [data, setData] = useState();
 
   async function load() {
-    let tempData = await Products();
+    let tempData = await GetAllProductsWithImages();
     setData(tempData[0]);
     console.log(tempData)
   }
@@ -34,15 +35,17 @@ function processData(data) {
     a.push(
       <Col xl={3}>
         <CardGroup>
-          <Card>
-            <Card.Img variant="top" src={p.Data} />
-            <Card.Body>
-              <Card.Title>{p.Name}</Card.Title>
-              <Card.Text>
-                {(p.Description != null && p.Description.length > 200) ? p.Description.substring(0, 197) + "..." : p.Description}
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          <LinkContainer exact to={`/product/${p.UPC}`}>
+            <Card>
+              <Card.Img variant="top" src={(p.Images != null) ? p.Images.split('*')[0] : ""} />
+              <Card.Body>
+                <Card.Title>{p.Name}</Card.Title>
+                <Card.Text>
+                  {(p.Description != null && p.Description.length > 200) ? p.Description.substring(0, 197) + "..." : p.Description}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </LinkContainer>
         </CardGroup>
       </Col>
     )
