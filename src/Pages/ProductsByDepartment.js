@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { GetProductWithImagesByUPC } from "../DataAPI/Products";
 import noImage from "../Assets/no-image.jpg"
 
-export default function ProductPage(props) {
+export default function ProductsByDepartment(props) {
     const [productData, setProductData] = useState();
 
     async function loadProductData() {

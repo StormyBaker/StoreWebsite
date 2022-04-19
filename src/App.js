@@ -1,9 +1,12 @@
 import './App.css';
 import AppNavbar from './Components/AppNavbar.js';
 import HeaderCarousel from './Components/HeaderCarousel.js';
-import CardRow from './Components/CardRow.js';
+import ProductCards from './Components/ProductCards.js';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductPage from './Pages/ProductPage';
+import AllProductsPage from './Pages/AllProductsPage';
+import ProductsByDepartment from './Pages/ProductsByDepartment';
+import HomePage from './Pages/HomePage';
 
 
 
@@ -15,8 +18,10 @@ function App() {
             <AppNavbar name="Jarvis Foods" />
             <HeaderCarousel />
             <Switch>
+              <Route path="/products" component={AllProductsPage} />
+              <Route path="/products/:department" component={ProductsByDepartment} />
               <Route path="/product/:upc" component={ProductPage} />
-              <Route path="/" component={CardRow} />
+              <Route path="/" component={HomePage} />
             </Switch>
           </div>
 

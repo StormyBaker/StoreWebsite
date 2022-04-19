@@ -1,14 +1,19 @@
 import { Navbar, Nav, Container, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 export default function AppNavbar(props) {
     return (
         <Navbar bg="light" expand="lg">
         <Container>
-            <Navbar.Brand href="/home">{props.name}</Navbar.Brand>
+            <LinkContainer exact to="/home">
+                <Navbar.Brand href="/home">{props.name}</Navbar.Brand>
+            </LinkContainer>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-                <Nav.Link href="/home">Home</Nav.Link>
+                <LinkContainer exact to="/home">
+                    <Nav.Link href="/home">Home</Nav.Link>
+                </LinkContainer>
                 <Nav.Link href="/link">Search Bar</Nav.Link>
                 <NavDropdown title="About" id="about-dropdown">
                     <NavDropdown.Item href="/about">About Us</NavDropdown.Item>
