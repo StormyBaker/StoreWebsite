@@ -1,5 +1,6 @@
 import { Navbar, Nav, Container, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import ProductSearchBar from './ProductSearchBar';
 
 export default function AppNavbar(props) {
     return (
@@ -32,15 +33,7 @@ export default function AppNavbar(props) {
                     <NavDropdown.Item href="/logout">Log Out</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
-            <Form className="d-flex">
-                <FormControl
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-            </Form>
+            <ProductSearchBar />
             </Navbar.Collapse>
         </Container>
         </Navbar>
