@@ -22,6 +22,7 @@ export default function ProductPage(props) {
             </div>
         )
     }
+
     return (
         <div>
             <Row>

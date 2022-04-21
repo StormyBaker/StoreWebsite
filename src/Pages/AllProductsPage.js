@@ -1,7 +1,5 @@
 import { useState } from "react"
-import { Col, Row } from "react-bootstrap";
 import { GetAllProductsWithImages } from "../DataAPI/Products";
-import noImage from "../Assets/no-image.jpg"
 import ProductCards from "../Components/ProductCards";
 
 export default function AllProductsPage(props) {
@@ -25,6 +23,11 @@ export default function AllProductsPage(props) {
     }
 
     return (
-        <ProductCards data={productData} />
+        <div>
+            <div className="all-products-header">
+                <h1>Shop by Department</h1>
+            </div>
+            <ProductCards data={productData} />
+        </div>
     )
 }

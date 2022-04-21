@@ -8,15 +8,12 @@ import AllProductsPage from './Pages/AllProductsPage';
 import ProductsByDepartment from './Pages/ProductsByDepartment';
 import HomePage from './Pages/HomePage';
 
-
-
 function App() {
   return (
     <Router>
         <div className="App">
           <div className="Page">
             <AppNavbar name="Jarvis Foods" />
-            <HeaderCarousel />
             <Switch>
               <Route path="/products" component={AllProductsPage} />
               <Route path="/products/:department" component={ProductsByDepartment} />

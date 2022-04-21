@@ -14,7 +14,9 @@ export default function AppNavbar(props) {
                 <LinkContainer exact to="/home">
                     <Nav.Link href="/home">Home</Nav.Link>
                 </LinkContainer>
-                <Nav.Link href="/link">Search Bar</Nav.Link>
+                <LinkContainer exact to="/products">
+                    <Nav.Link href="/products">Shop</Nav.Link>
+                </LinkContainer>
                 <NavDropdown title="About" id="about-dropdown">
                     <NavDropdown.Item href="/about">About Us</NavDropdown.Item>
                     <NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
