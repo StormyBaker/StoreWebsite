@@ -1,38 +1,93 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #d0d0d0;
+  margin: 0;
+  font-family: 'Helvetica', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.Page {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position:relative;
+  padding-bottom: 176px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.search-result {
+  padding: 3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-result:hover {
+  background-color: rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.search-results a, .search-results a:hover, .search-results a:visited {
+  text-decoration: none;
+  color: black !important;
+}
+
+.search-result-name {
+  padding-left: 30px;
+}
+
+#popover-positioned-srcres {
+  max-width: 350px;
+}
+
+.search-results.popover-body {
+  padding: 16px 0;
+}
+
+.src-error {
+  padding: 0 16px;
+}
+
+.dept-select {
+  display: inline-block;
+  margin-top: 111px;
+  width: 80%;
+  background-color: white;
+  border: 1px solid #a3a3a3;
+  border-radius: 10px;
+  box-shadow: 1px 1px rgba(0,0,0,0.5);
+}
+
+.dept-select a.nav-link.active, .dept-select a.nav-link:hover {
+  color: rgba(0,0,0,1) !important;
+}
+
+.dept-select a.nav-link {
+  color: rgba(0,0,0,0.6) !important;
+}
+
+.dept-select .dept-heading {
+  font-weight: bold;
+  font-size: 22px;
+  padding-top: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid black;
+}
+
+.row {
+  margin: 0 !important;
+}
+
+footer {
+  width: 100%;
+  height: 156px;
+  position: absolute;
+  bottom: 0;
+  border-top: 3px solid black;
+  background-color: rgb(255,255,255);
 }

@@ -7,7 +7,7 @@ export default function AppNavbar(props) {
         <Navbar bg="light" expand="lg">
         <Container>
             <LinkContainer exact to="/home">
-                <Navbar.Brand href="/home">{props.name}</Navbar.Brand>
+                <Navbar.Brand className="mr-auto" href="/home">{props.name}</Navbar.Brand>
             </LinkContainer>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

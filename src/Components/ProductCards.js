@@ -5,17 +5,20 @@ export default function ProductCards(props) {
   return (
     <Container>
       <Row>
-        {processData(props.data)}
+        {processData(props.data, props.department)}
       </Row>
     </Container>
   )
 }
 
-function processData(data) {
+function processData(data, department) {
   var a = []
   for (let p of data){
+    if (department && p["Department_ID"] !== parseInt(department)) {
+      continue;
+    }
     a.push(
-      <Col xl={3}>
+      <Col md={6} lg={4} xl={3}>
         <LinkContainer exact to={`/product/${p.UPC}`}>
           <a className="not-link" href={`/product/${p.UPC}`}>
             <CardGroup>

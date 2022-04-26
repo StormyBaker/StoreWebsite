@@ -1,7 +1,7 @@
 import axios from "axios"
 
 // No trailing slash (/)
-const requestUrl = "http://192.168.2.34:3000";
+const requestUrl = "http://localhost:3000";
 
 // Get a specific product from the database by its UPC
 export function GetProductByUPC(upc) {

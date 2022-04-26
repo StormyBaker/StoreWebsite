@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Button, Form, FormControl, OverlayTrigger, Popover } from "react-bootstrap";
 import { GetAllProductsWithImages } from "../DataAPI/Products";
+import { LinkContainer } from 'react-router-bootstrap';
+import {Card, CardGroup, Col, Container, Row} from 'react-bootstrap';
 
 export default function ProductSearchBar() {
     const [productData, setProductData] = useState();
@@ -17,27 +19,30 @@ export default function ProductSearchBar() {
         if (!term.trim()) {
             setShowResults(false);
         } else {
-            let matches = []
-            for (var product of productData) {
-                let terms = term.split(' ');
+            if (productData !== undefined) {
+                let matches = []
+                for (var product of productData) {
+                    let terms = term.split(' ');
 
-                let pnLower = product.Name.toLowerCase();
-                let pdLower = product.Name.toLowerCase();
+                    let pnLower = product.Name.toLowerCase();
+                    let pdLower = product.Name.toLowerCase();
 
-                let broken = false;
+                    let broken = false;
 
-                for (let term of terms) {
-                    if (!pnLower.includes(term.toLowerCase()) && !pdLower.includes(term.toLowerCase())) {
-                        broken = true;
-                        break;
+                    for (let term of terms) {
+                        if (!pnLower.includes(term.toLowerCase()) && !pdLower.includes(term.toLowerCase())) {
+                            broken = true;
+                            break;
+                        }
+                    }
+                    if (!broken) {
+                        matches.push(product);
                     }
                 }
-                if (!broken) {
-                    matches.push(product);
-                }
+
+                setResults(matches)
             }
 
-            setResults(matches)
             setShowResults(true);
         }
     }
@@ -45,12 +50,31 @@ export default function ProductSearchBar() {
     function displayMatches(matches) {
         let componentList = [];
 
+        if (!productData) {
+            return(
+                <span className="src-error">Loading...</span>
+            );
+        }
+
         for (let match of matches) {
             componentList.push(
-                <div>
-                    <p>{match.Name}</p>
-                </div>
+                <LinkContainer exact to={`/product/${match.UPC}`}>
+                    <a href={`/product/${match.UPC}`}>
+                        <div className="search-result">
+                            <Row>
+                                <Col xs={2}><img src={match.Images.split('*')[0]} alt={match.Name} height="50px" width="50px"></img></Col>
+                                <Col className="search-result-name">
+                                    {match.Name}
+                                </Col>
+                            </Row>
+                        </div>
+                    </a>
+                </LinkContainer>
             )
+        }
+
+        if (componentList.length === 0) {
+            componentList.push(<span className="src-error">No results.</span>);
         }
 
         return componentList;
@@ -66,8 +90,8 @@ export default function ProductSearchBar() {
         placement="bottom"
         show={showResults}
         overlay={
-          <Popover id={`popover-positioned-abc`}>
-            <Popover.Body>
+          <Popover id={`popover-positioned-srcres`}>
+            <Popover.Body className="search-results">
               {displayMatches(results)}
             </Popover.Body>
           </Popover>
@@ -81,7 +105,6 @@ export default function ProductSearchBar() {
             aria-label="Search"
             onChange={search}
             />
-            <Button variant="outline-success">Search</Button>
         </Form>
       </OverlayTrigger>
     )
