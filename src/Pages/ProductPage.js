@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Col, Row } from "react-bootstrap";
 import { GetProductWithImagesByUPC } from "../DataAPI/Products";
 import noImage from "../Assets/no-image.jpg"
+import Loader from "../Components/Loader";
 
 export default function ProductPage(props) {
     const [productData, setProductData] = useState();
@@ -17,9 +18,7 @@ export default function ProductPage(props) {
 
     if (!productData) {
         return (
-            <div>
-                Loading product data...
-            </div>
+            <Loader text="Loading product data..." />
         )
     }
 
@@ -27,7 +26,7 @@ export default function ProductPage(props) {
         <div>
             <Row>
                 <Col xl={{span:3,offset:2}}>
-                    <img src={(productData.Images == null || productData.Images === undefined) ? noImage : productData.Images.split('*')[0]} alt="abc"/>
+                    <img width="80%" src={(productData.Images == null || productData.Images === undefined) ? noImage : productData.Images.split('*')[0]} alt="abc"/>
                 </Col>
                 <Col xl={5}>
                     <h1>{productData.Name}</h1>
