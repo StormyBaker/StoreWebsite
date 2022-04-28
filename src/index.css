@@ -60,3 +60,20 @@ body, html, .root {
 .carousel, .carousel-item {
   max-height: calc(100vh - 56px);
 }
+
+.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption h3 {
+  font-size: 8rem;
+  text-shadow: 0.5rem 0.5rem 0.75rem #000000;
+  font-family: 'Lobster', cursive;
+}
+
+.carousel-caption p {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0.125rem 0.125rem 0.1875rem #000000;
+  font-family: 'Lobster', cursive;

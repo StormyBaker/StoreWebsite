@@ -14,8 +14,8 @@ export default function HeaderCarousel(props) {
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <h3>Jarvis Foods</h3>
+                <p>Welcome to Jarvis Foods, for all of your dairy needs! (and more)</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -26,8 +26,8 @@ export default function HeaderCarousel(props) {
                 />
 
                 <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3>Superior Products</h3>
+                <p>We sell superior product brands including Best Choice, Hiland, and more!</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -38,10 +38,9 @@ export default function HeaderCarousel(props) {
                 />
 
                 <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <h3>Join Today</h3>
+                <p>Create an account today, and browse our vast options!</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
     )
-}
