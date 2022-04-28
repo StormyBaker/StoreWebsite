@@ -1,5 +1,6 @@
 import { Navbar, Nav, Container, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import NavLogin from './NavLogin';
 import ProductSearchBar from './ProductSearchBar';
 
 export default function AppNavbar(props) {
@@ -34,6 +35,7 @@ export default function AppNavbar(props) {
                 </NavDropdown>
             </Nav>
             <ProductSearchBar />
+            <NavLogin />
             </Navbar.Collapse>
         </Container>
         </Navbar>
