@@ -19,12 +19,6 @@ export default function AppNavbar(props) {
                 <LinkContainer exact to="/products">
                     <Nav.Link href="/products">Shop</Nav.Link>
                 </LinkContainer>
-                <NavDropdown title="Account" id="account-dropdown-in">
-                    <NavDropdown.Item href="/cart">My Cart</NavDropdown.Item>
-                    <NavDropdown.Item href="/myaccount">My Account</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="/logout">Log Out</NavDropdown.Item>
-                </NavDropdown>
             </Nav>
             <ProductSearchBar />
             <NavLogin />

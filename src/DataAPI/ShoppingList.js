@@ -1,11 +1,9 @@
 import axios from "axios"
+import { ENDPOINT } from "../Constants/Constants";
 
-// No trailing slash (/)
-const requestUrl = "http://192.168.2.34:3000";
-
-export function AddToList(id, itemid, quantity) {
+export function AddToList(id, upc, quantity) {
     return new Promise(resolve => {
-        axios.get(`${requestUrl}/addToList?id=${id}&itemid=${itemid}&quantity=${quantity}`)
+        axios.get(`${ENDPOINT}/addToList?id=${id}&upc=${upc}&quantity=${quantity}`)
           .then(function (response) {
               resolve(response.data)
           })
@@ -15,9 +13,9 @@ export function AddToList(id, itemid, quantity) {
     })
 }
 
-export function GetProductList(id) {
+export function GetShoppingList(id) {
     return new Promise(resolve => {
-        axios.get(`${requestUrl}/getList?id=${id}`)
+        axios.get(`${ENDPOINT}/getShoppingList?id=${id}`)
           .then(function (response) {
               resolve(response.data)
           })
@@ -27,23 +25,12 @@ export function GetProductList(id) {
     })
 }
 
-export function RemoveProductFromList(id) {
+export function RemoveProductFromList(id, upc) {
   return new Promise(resolve => {
-      axios.get(`${requestUrl}/removeFromList?id=${id}`)
+      axios.get(`${ENDPOINT}/removeFromList?id=${id}&upc=${upc}`)
         .then(function (response) {
             resolve(response.data)
-        })
-        .catch(function (error) {
-          resolve(false);
-        });
-  })
-}
-
-export function SetNewQuantity(id, quantity) {
-  return new Promise(resolve => {
-      axios.get(`${requestUrl}/setQuantity?id=${id}`)
-        .then(function (response) {
-            resolve(response.data)
+            console.log(response.data)
         })
         .catch(function (error) {
           resolve(false);

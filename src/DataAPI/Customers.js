@@ -1,11 +1,9 @@
 import axios from "axios"
 import { ENDPOINT } from "../Constants/Constants";
 
-// VERY INSECURE ACCOUNT SYSTEM, DO NOT EVER PUT A SYSTEM LIKE THIS INTO PRODUCTION
-// Takes a email and password and requests user data from the server
-export function LoginUser(email, password) {
+export function GetCustomers() {
     return new Promise(resolve => {
-      axios.get(`${ENDPOINT}/loginUser?email=${email}&password=${password}`)
+        axios.get(`${ENDPOINT}/getCustomers`)
           .then(function (response) {
               resolve(response.data)
           })

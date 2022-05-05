@@ -16,6 +16,19 @@ body {
   text-align: center;
 }
 
+.login-btn {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 0.7em;
+  border-radius: 0.25rem;
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+}
+
 .Page {
   min-height: 100vh;
   position:relative;
@@ -89,5 +102,71 @@ footer {
   position: absolute;
   bottom: 0;
   border-top: 3px solid black;
-  background-color: rgb(255,255,255);
+  background-color: #eb2e3b;
+}
+
+.add-button-card {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.add-button-card button {
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+footer div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+footer div p {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bolder;
+  font-family: Helvetica;
+  font-size: 24px;
+}
+
+.margin-top {
+  margin-top: 30px !important;
+}
+
+.detail-row {
+  margin: 5px 0 !important;
+}
+
+.sh-list-item {
+  max-height: 100px !important;
+}
+
+.sh-list-item div img {
+  max-height: 100px;
+}
+
+.list-header {
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgba(0,0,0,0.2);
+  margin: 0 !important;
+}
+
+.list-body {
+  border: 3px solid rgba(0,0,0,0.2);
+}
+
+.list-body .row div {
+  position: relative;
+}
+
+.list-body .row div span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

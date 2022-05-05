@@ -40,7 +40,7 @@ export default function LoginModal(props) {
 
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={login}>
+                        <Button variant="success" onClick={login}>
                             Login
                         </Button>
                         <Button variant="primary" onClick={props.register}>
