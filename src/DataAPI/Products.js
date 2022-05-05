@@ -70,6 +70,7 @@ export function GetProductsByDepartment(departmentId) {
           });
     })
 }
+
 // Get all products by department from the database with their associated images
 export function GetProductsWithImageByDepartment(departmentId) {
     return new Promise(resolve => {

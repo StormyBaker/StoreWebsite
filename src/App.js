@@ -4,9 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductPage from './Pages/ProductPage';
 import AllProductsPage from './Pages/AllProductsPage';
 import HomePage from './Pages/HomePage';
+import { AccountProvider } from './DataAPI/CTXProvider';
 
 function App() {
   return (
+    <AccountProvider>
       <Router>
           <div className="App">
             <div className="Page">
@@ -24,6 +26,7 @@ function App() {
             </div>
           </div>
       </Router>
+      </AccountProvider>
   );
 }
 
