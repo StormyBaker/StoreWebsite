@@ -1,7 +1,7 @@
 import axios from "axios"
 
 // No trailing slash (/)
-const requestUrl = "http://localhost:3000";
+const requestUrl = "http://192.168.2.34:3000";
 
 // Get all departments from the database
 export function GetDepartments() {
