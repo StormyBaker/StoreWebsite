@@ -19,15 +19,7 @@ export default function AppNavbar(props) {
                 <LinkContainer exact to="/products">
                     <Nav.Link href="/products">Shop</Nav.Link>
                 </LinkContainer>
-                <NavDropdown title="About" id="about-dropdown">
-                    <NavDropdown.Item href="/about">About Us</NavDropdown.Item>
-                    <NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown title="Account (logged out)" id="account-dropdown-out">
-                    <NavDropdown.Item href="/login">Log In</NavDropdown.Item>
-                    <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown title="Account (logged in)" id="account-dropdown-in">
+                <NavDropdown title="Account" id="account-dropdown-in">
                     <NavDropdown.Item href="/cart">My Cart</NavDropdown.Item>
                     <NavDropdown.Item href="/myaccount">My Account</NavDropdown.Item>
                     <NavDropdown.Divider />

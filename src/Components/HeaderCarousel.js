@@ -44,3 +44,4 @@ export default function HeaderCarousel(props) {
             </Carousel.Item>
         </Carousel>
     )
+}
